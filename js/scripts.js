@@ -1,22 +1,15 @@
-// var numerals = [1, "i" , 5, "v", 10, "x", 50, 'l', 100, 'c', 500, "d", 1000, "m"]
-// for (i=numerals.length-1;i>=0;i-=2)
 
-function findRoman (num) {
-  if (num === 1) {
-    return("I");
-  } if (num === 5) {
-    return("V");
-  } if (num === 10){
-    return("X");
-  }if (num === 50){
-    return("L");
-  }if (num === 100){
-    return("C");
-  }if (num === 500){
-    return("D");
-  }if (num === 1000){
-    return("M");
+function findRoman (input) {
+  var numerals = [1000, "M" , 500, "D", 100, "C", 50, 'L', 10, 'X', 5, "V", 1, "I"]
+  for (i=0;i<numerals.length;i += 2){
+    var num = numerals[i];
+    if (input === num){
+      return numerals[i+1]
+    }
+
+    
   }
+
 }
 
 function fixRoman (num){

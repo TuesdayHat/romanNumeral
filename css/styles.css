@@ -1,3 +1,9 @@
 body {
   text-align: center;
+  font-family: serif;
+  font-size: 20px;
+}
+
+#result {
+  margin: 50px;
 }
