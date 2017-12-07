@@ -1,11 +1,11 @@
 
 function findRoman (input) {
-  var numerals = [1000, "M" , 500, "D", 100, "C", 50, 'L', 10, 'X', 5, "V", 1, "I"]
+  var numerals = [1000, "M", 900, "CM", 500, "D", 100, "C", 90, "XC", 50, 'L', 40, "XL", 10, 'X', 9, "IX", 5, "V", 4, "IV", 1, "I"]
   var chop = input
   var roman = ''
 
   for (var i=0;i<numerals.length;i += 2){
-    var num = numerals[i];
+    var num = numerals[i];// 1000
     var letter = numerals[i+1]
     if (input === num){
       return letter
@@ -13,7 +13,7 @@ function findRoman (input) {
       return "Too Big For Namek"
     } else if(input > 3999) {
       return "Too Big For Rome"
-    } else if ((chop / num) >= 1) {
+    } else if ((chop / num) >= 1) {//2001 / 1000 = 2.stuff
       roman = multNum(Math.floor(chop/num), letter, roman)
       chop = chop % num
     } else {
@@ -21,8 +21,8 @@ function findRoman (input) {
     }
   }
 
+  //return roman
   return roman
-  //return fixRoman(roman)
 }
 function multNum (times, letter, roman) {//(goes in twice, letter to add, result string)
   var result = roman.split('');
@@ -30,10 +30,6 @@ function multNum (times, letter, roman) {//(goes in twice, letter to add, result
     result.push(letter);
   }
   return result.join('');
-}
-
-function fixRoman (num){
-
 }
 
 $(document).ready(function() {
